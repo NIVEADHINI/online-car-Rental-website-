@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+.car-section {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.car-left,
+.car-right {
+  flex: 1 1 45%;
+}
+
+.car-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.car-image-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.car-image-row img {
+  width: 220px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.car-shapes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center; /* centers the shapes horizontally */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shape {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.diamond {
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.spec-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.spec-card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center; /* center-align content */
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center;
+  gap: 0.5rem; /* spacing between lines */
+}
+
+.spec-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.spec-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.spec-card p {
+  margin: 0;
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.car-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.rating {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.price {
+  font-size: 1.2rem;
+}
+
+.price sub {
+  font-size: 0.8rem;
+  vertical-align: baseline;
+}
+
+.rent-btn {
+  background-color: blue;
+  color: black;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .car-section {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .car-left,
+  .car-right {
+    width: 100%;
+  }
+
+  .car-image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-image-row img {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .car-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .rent-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-title {
+    font-size: 1.5rem;
+  }
+
+  .spec-title {
+    font-size: 1.2rem;
+  }
+
+  .spec-card {
+    padding: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .car-footer {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .rent-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+.card-stack-container {
+  position: relative;
+  width: 1450px;
+  height: 180px;
+  margin: 2rem;
+}
+
+.primary-card {
+  background-color: #add8e6;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  color: black;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.card-label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.secondary-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 1350px;
+  height: 100px;
+  background-color: #add8e6;;
+  border: 1px solid #060606;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 35px;
+}
+.vehicle-showcase {
+  padding: 2rem;
+}
+
+.showcase-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-grid {
+  display: flex;
+  gap: 15.5rem;
+  flex-wrap: wrap;
+}
+
+.vehicle-card {
+  background-color: #d3d3d3;
+  border-radius: 15px;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.details-container {
+  padding: 1rem;
+}
+
+.vehicle-title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.vehicle-price {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.price-unit {
+  font-size: 0.8rem;
+  vertical-align: sub;
+}
+
+.specs-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.spec-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.rating-badge {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.rent-action {
+  background-color: #2196f3;
+  color: black;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.rent-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.rent-btn:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+<section class="car-section">
+  <!-- Left Side -->
+  <div class="car-left">
+    <h1 class="car-title">Toyota Fortuner 2023</h1>
+    <div class="car-image-row">
+      <img src="fill1.png" alt="Front View" />
+      <img src="fill2.png" alt="Side View" />
+      <img src="fill3.png" alt="Rear View" />
+    </div>
+    <div class="car-shapes">
+      <span class="shape circle"></span>
+      <span class="shape circle"></span>
+      <span class="shape diamond"></span>
+      <span class="shape circle"></span>
+      <span class="shape circle"></span>
+    </div>
+  </div>
+
+  <!-- Right Side -->
+  <div class="car-right">
+    <h2 class="spec-title">Specification</h2>
+    <div class="spec-grid">
+      <!-- Row 1 -->
+      <div class="spec-card">
+        <img src="ff1.jpg" alt="Gear Box" />
+        <h3>Gear Box</h3>
+        <p>Manual/Automat</p>
+      </div>
+      <div class="spec-card">
+        <img src="ff2.jpeg" alt="Fuel" />
+        <h3>Fuel</h3>
+        <p>Petrol</p>
+      </div>
+      <div class="spec-card">
+        <img src="ff3.jpg" alt="Doors" />
+        <h3>Doors</h3>
+        <p>4</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="spec-card">
+        <img src="ff4.jpeg" alt="Air Conditioner" />
+        <h3>Air Conditioner</h3>
+        <p>Yes</p>
+      </div>
+      <div class="spec-card">
+        <img src="ff5.JPEG" alt="Seats" />
+        <h3>Seats</h3>
+        <p>7</p>
+      </div>
+      <div class="spec-card">
+        <img src="ff6.jpeg" alt="Distance" />
+        <h3>Distance</h3>
+        <p>1500</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<div class="car-footer">
+  <span class="rating">⭐ 5.0</span>
+  <span class="price">₹1,800<sub>/day</sub></span>
+  <a href="home.html" class="rent-link">
+    <button class="rent-btn">Rent a Car</button>
+  </a>
+</div>
+  </div>
+</section>
+
+<section class="card-stack-container">
+  <!-- Primary Card -->
+  <div class="primary-card">
+    <p class="card-label">More Information:</p>
+  </div>
+
+  <!-- Secondary Overlay (Empty) -->
+  <div class="secondary-overlay"></div>
+</section>
+
+<section class="vehicle-showcase">
+  <h2 class="showcase-heading">Other Cars</h2>
+  <div class="vehicle-grid">
+
+    <!-- Vehicle Card -->
+    <div class="vehicle-card">
+      <div class="image-container">
+        <img src="ca1.png" alt="Isuzu D-Max 2025" class="vehicle-image" />
+      </div>
+      <div class="details-container">
+        <h3 class="vehicle-title">Isuzu D-Max 2025</h3>
+        <p class="vehicle-price">1,800<span class="price-unit">/day</span></p>
+        <div class="specs-panel">
+          <span class="spec-item"><img src="spp.jpg" alt=""> 4,000</span>
+          <span class="spec-item"><img src="man.png" alt=""> Manual</span>
+          <span class="spec-item"><img src="per.jpg" alt=""> 7 Person</span>
+          <span class="spec-item"><img src="ele.jpeg" alt=""> Electric</span>
+        </div>
+        <div class="action-bar">
+          <span class="rating-badge">⭐ 4.7</span>
+          <button class="rent-action">Rent Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat for second and third cards -->
+    <div class="vehicle-card">
+      <div class="image-container">
+        <img src="ca2.png" alt="Isuzu D-Max 2025" class="vehicle-image" />
+      </div>
+      <div class="details-container">
+        <h3 class="vehicle-title">Isuzu D-Max 2025</h3>
+        <p class="vehicle-price">1,800<span class="price-unit">/day</span></p>
+        <div class="specs-panel">
+          <span class="spec-item"><img src="spp.jpg" alt=""> 4,000</span>
+          <span class="spec-item"><img src="man.png" alt=""> Manual</span>
+          <span class="spec-item"><img src="per.jpg" alt=""> 7 Person</span>
+          <span class="spec-item"><img src="ele.jpeg" alt=""> Electric</span>
+        </div>
+        <div class="action-bar">
+          <span class="rating-badge">⭐ 4.7</span>
+          <button class="rent-action">Rent Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="vehicle-card">
+      <div class="image-container">
+        <img src="ca3.png" alt="Isuzu D-Max 2025" class="vehicle-image" />
+      </div>
+      <div class="details-container">
+        <h3 class="vehicle-title">Isuzu D-Max 2025</h3>
+        <p class="vehicle-price">1,800<span class="price-unit">/day</span></p>
+        <div class="specs-panel">
+          <span class="spec-item"><img src="spp.jpg" alt=""> 4,000</span>
+          <span class="spec-item"><img src="man.png" alt=""> Manual</span>
+          <span class="spec-item"><img src="per.jpg" alt=""> 7 Person</span>
+          <span class="spec-item"><img src="ele.jpeg" alt=""> Electric</span>
+        </div>
+        <div class="action-bar">
+          <span class="rating-badge">⭐ 4.7</span>
+          <button class="rent-action">Rent Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="about.html">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+.car-filter-section {
+  display: flex;
+  gap: 50px;
+  padding: 2rem;
+  font-family: sans-serif;
+  color: black;
+}
+
+.filter-header h1 .highlight {
+  color: black;
+}
+
+.filter-cards {
+  width: 50%;
+  position: relative;
+}
+
+.filter-card {
+  background-color: #e6d6f5;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: -20px; /* Updated margin */
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  margin-top: -2rem;
+  z-index: 2;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.apply-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 2rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.related-details-panel {
+  width: 35%;
+  background-color: #e6d6f5;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-header {
+  display: flex;
+  justify-content: left;
+  font-weight: bold;
+}
+
+.related-scroll {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+
+.related-card {
+  background-color: #d3d3d3;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.car-img {
+  width: 50%;
+  border-radius: 12px;
+}
+
+.features {
+  display: flex;
+  gap: 1rem;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.rating {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-weight: bold;
+}
+
+.rent-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: blue;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.rental-date {
+  margin-top: 0px; /* First card stays in place */
+}
+.filter-card.overlay {
+  position: relative;
+}
+
+/* Apply incremental spacing to each overlay card */
+.filter-card.overlay:nth-of-type(2) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(3) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(4) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(5) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(6) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(7) { margin-top: -10px; }
+.filter-card.overlay:nth-of-type(8) { margin-top: -10px; }
+.detail-panel {
+  margin-left: 200px; /* Adjust this value to move it right */
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+  <h1>Car-> Filter</h1>
+<section class="car-filter-section">
+  <div class="filter-cards">
+    <!-- Card 1: Rental Date -->
+    <div class="filter-card rental-date">
+      <h2>Rental Date:</h2>
+      <div class="corner-icon"></div>
+    </div>
+
+    <!-- Card 2: Rental Type -->
+      <div class="filter-card overlay rental-type">
+      <h2>Rental Type:</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="rental" /> Per Hour</label>
+        <label><input type="radio" name="rental" /> One Day</label>
+        <label><input type="radio" name="rental" /> Monthly</label>
+      </div>
+    </div>
+
+    <!-- Card 3: Fuel Type -->
+    <div class="filter-card overlay fuel-type">
+      <h2>Fuel Type:</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Petrol</label>
+        <label><input type="checkbox" /> Diesel</label>
+        <label><input type="checkbox" /> Electric</label>
+      </div>
+    </div>
+
+    <!-- Card 4: Car Model & Year -->
+    <div class="filter-card overlay model-year">
+      <h2>Car Model & Year:</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> 2023</label>
+        <label><input type="checkbox" /> 2024</label>
+        <label><input type="checkbox" /> 2025</label>
+      </div>
+    </div>
+
+    <!-- Card 5: Transmission -->
+    <div class="filter-card overlay transmission">
+      <h2>Transmission:</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="transmission" /> Automatic</label>
+        <label><input type="radio" name="transmission" /> Manual</label>
+        <label><input type="radio" name="transmission" /> Any</label>
+      </div>
+    </div>
+
+    <!-- Card 6: Body Style -->
+    <div class="filter-card overlay body-style">
+      <h2>Body Style:</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Sedan</label>
+        <label><input type="checkbox" /> Wagon</label>
+        <label><input type="checkbox" /> Crossover</label>
+        <label><input type="checkbox" /> Coupe</label>
+        <label><input type="checkbox" /> Pickup</label>
+        <label><input type="checkbox" /> Sport Coupe</label>
+      </div>
+    </div>
+
+    <!-- Card 7: Price Range -->
+   <div class="filter-card overlay price-range" onclick="window.location.href='pric.html'">
+  <h2>Price Range:</h2>
+  <input type="range" min="1000" max="2000" value="1800" title="1k–2k" />
+</div>
+    <!-- Card 8: Car Brand -->
+    <div class="filter-card overlay car-brand">
+      <h2>Car Brand:</h2>
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Mahindra</label>
+        <label><input type="checkbox" /> Toyota</label>
+        <label><input type="checkbox" /> Kia</label>
+        <label><input type="checkbox" /> Hyundai</label>
+        <label><input type="checkbox" /> Tata Motors</label>
+        <label><input type="checkbox" /> Renault</label>
+        <label><input type="checkbox" /> BMW</label>
+        <label><input type="checkbox" /> Audi</label>
+        <label><input type="checkbox" /> MB</label>
+        <label><input type="checkbox" /> Jeep</label>
+        <label><input type="checkbox" /> Skoda</label>
+        <label><input type="checkbox" /> MG</label>
+        <br>
+        <button class="apply-btn">Apply</button>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side Panel -->
+  <div class="related-details-panel">
+    <div class="related-header">
+      <span>Related Details:</span>
+      <span class="view-all">View All</span>
+    </div>
+
+    <div class="related-scroll">
+      <!-- Card 1 -->
+      <div class="related-card">
+        <img src="spc4.png" alt="Isuzu D-Max" class="car-img" />
+        <h3>Isuzu D-Max 2025</h3>
+        <p>₹1,800<span class="subtext">/day</span></p>
+        <div class="features">
+          <span>₹4,000</span>
+          <span>Manual</span>
+          <span>7 Person</span>
+          <span>Electric</span>
+        </div>
+        <div class="rating">⭐ 4.7</div>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="related-card">
+        <img src="spc6.png" alt="Isuzu D-Max" class="car-img" />
+        <h3>Isuzu D-Max 2025</h3>
+        <p>₹1,800<span class="subtext">/day</span></p>
+        <div class="features">
+          <span>₹4,000</span>
+          <span>Manual</span>
+          <span>7 Person</span>
+          <span>Electric</span>
+        </div>
+        <div class="rating">⭐ 4.7</div>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+    </div>
+          <div class="related-card">
+        <img src="spc3.png" alt="Isuzu D-Max" class="car-img" />
+        <h3>Isuzu D-Max 2025</h3>
+        <p>₹1,800<span class="subtext">/day</span></p>
+        <div class="features">
+          <span>₹4,000</span>
+          <span>Manual</span>
+          <span>7 Person</span>
+          <span>Electric</span>
+        </div>
+        <div class="rating">⭐ 4.7</div>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="about.html">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>

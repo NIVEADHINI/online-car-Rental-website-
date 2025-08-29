@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+.contact-section {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.contact-image img {
+  width: 600px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.form-title {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  color: black;
+}
+
+.subject-section {
+  margin: 15px 0;
+}
+
+.subject-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message-box {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background-color: #007BFF;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 1000px;
+}
+
+.card-overlay {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card {
+  background-color: #eee;
+  color: black;
+  padding: 20px;
+  width: 550px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid black; /* fixed typo: 'soild' → 'solid' */
+  margin-top: -5px; /* moves the card upward */
+}
+/* Reverse stacking: Business Hour on top */
+.card-business {
+  margin-bottom: -40px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2 px soild black;
+}
+
+.card-location {
+  margin-bottom: -20px;
+  z-index: 2;
+}
+
+.card-contact {
+  z-index: 1;
+  margin-top:-70px;
+}
+
+.chat-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.chat-text {
+  text-align: center;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+  <section class="contact-section">
+    <div class="breadcrumb">
+      <h1>Home → Contact</h1>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-image">
+        <img src="con1.png" alt="Contact Visual" />
+      </div>
+
+      <div class="contact-form">
+        <h2 class="form-title">Details</h2>
+
+        <div class="form-row">
+          <input type="text" class="input-box" placeholder="First Name" />
+          <input type="text" class="input-box" placeholder="Last Name" />
+        </div>
+
+        <div class="form-row">
+          <input type="email" class="input-box" placeholder="Email" />
+          <input type="text" class="input-box" placeholder="Number" />
+        </div>
+
+        <div class="subject-section">
+          <label class="subject-label">Select Subject</label>
+          <div class="checkbox-row">
+            <label><input type="checkbox" /> General Inquiry</label>
+            <label><input type="checkbox" /> Call Request</label>
+            <label><input type="checkbox" /> Complaint</label>
+            <label><input type="checkbox" /> Information</label>
+          </div>
+        </div>
+
+        <textarea class="message-box" placeholder="Message"></textarea>
+
+        <button class="submit-btn" onclick="window.location.href='home.html'">Submit</button>
+      </div>
+    </div>
+
+    <div class="card-overlay">
+      <div class="card card-contact">Contact</div>
+      <div class="card card-location">Location</div>
+      <div class="card card-business">
+        <h3 class="card-title">Business Hour</h3>
+        <img src="cb1.png" alt="Chat Icon" class="chat-image" />
+        <div class="chat-text">
+          Chat time: Our team is Available From Monday to <br />
+          Saturday from 9.00AM TO 8.00PM
+        </div>
+      </div>
+    </div>
+  </section>
+
+<br>
+<br>
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="about.html">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>

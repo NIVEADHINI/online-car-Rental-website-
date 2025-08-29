@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+.about-section {
+  padding: 40px;
+  background-color: #fff;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.breadcrumb h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-text p {
+  font-size: 35px;
+  line-height: 1.7;
+  color: #000;
+  text-align: justify;
+}
+.why-choose-section {
+  padding: 60px 40px;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.info-card {
+  background: #e1d5ed; /* light purple */
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-image {
+  width: 380px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #000;
+  text-align: left;
+}
+
+.left-title {
+  text-align: left;
+  width: 100%;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+  text-align: justify;
+}
+
+.left-text {
+  text-align: justify;
+  width: 100%;
+}
+/* Tablet View */
+@media (max-width: 992px) {
+  .why-us-card-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .why-us-card {
+    width: 45%;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .why-us-card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .why-us-card {
+    width: 90%;
+  }
+
+  .why-us-title {
+    font-size: 26px;
+  }
+
+  .why-us-heading {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .why-us-text {
+    font-size: 14px;
+  }
+}
+.stats-section {
+  padding: 30px 20px;
+  background-color: #fff;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  gap: -10px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.stat-box {
+  flex: 1 1 30%;
+}
+
+.stat-title {
+  font-size: 58px;
+  font-weight: bold;
+  color: #007BFF; /* Blue */
+  margin-bottom: 3px;
+}
+
+.stat-subtitle {
+  font-size: 18px;
+  color: #000; /* Black */
+}
+.car-process-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.car-process-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.car-process-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.car-process-header p {
+  font-size: 18px;
+  color: #333;
+}
+
+.car-process-body {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between; /* Ensures left and right sides stay apart */
+}
+
+.car-process-visual {
+  flex: 0 1 35%;
+  display: flex;
+  justify-content: flex-start; /* Pushes image to the right */
+  align-items: center;
+}
+
+.car-steps-column {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.car-step-card {
+  display: flex;
+  background-color: #E6E6FA; /* Light purple */
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+  align-items: center;
+  gap: 20px;
+  flex: 0 1 80%;       /* Shrinks card width */
+  max-width: 600px;    /* Optional: limits max width */
+  margin: 0 auto;      /* Centers the card horizontally */
+}
+
+.car-step-card img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.car-step-content h3 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.car-step-content p {
+  font-size: 16px;
+  color: #000;
+}
+
+.car-process-visual {
+  flex: 0 1 35%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 30px; /* Nudges image slightly left */
+}
+.car-process-visual img {
+  width: 140%;
+  height:140%;
+  max-width: 200%;
+  margin-left: -10px;
+  justify-items: left;
+  border-radius: 12px;
+  padding-right:10px;
+  transform: translateX(-20px); /* Moves image left without affecting layout */
+
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+<section class="about-section">
+  <div class="breadcrumb">
+    <h1>Home → About</h1>
+  </div>
+
+  <div class="about-content">
+    <div class="about-image">
+      <img src="ab1.png" alt="Rental Fleet" />
+    </div>
+
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>
+        At, Stradaluxe, we provide a wide range of rental vehicles to suit every journey and lifestly. From compact city cars and family-friendly SUVs torugged off-roader and premium luxury sedans, our diverse fleet is designed to meet your exact needs Whether you're commuting, road tripping, or arriving in style, we make car rental simple, flexible, and reilable backed by quality service and full time support.
+
+      </p>
+    </div>
+  </div>
+</section>
+<section class="why-choose-section">
+  <h2 class="section-title">Why Choose Us</h2>
+
+  <div class="card-row">
+    <!-- Card 1 -->
+    <div class="info-card">
+      <img src="abc1.png" alt="Customer Support" class="card-image" />
+      <h3 class="card-title left-text">Customer Support</h3>
+      <p class="card-text left-text">
+        Our dedicated customer support team is available only emergency time 24h to assist you with any question or concerns, ensuring a smooth rental experience.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="info-card">
+      <img src="abc2.png" alt="Affordable Rates" class="card-image" />
+      <h3 class="card-title left-title">Affordable Rates</h3>
+      <p class="card-text left-text">
+        We offer competitive and transparent pricing, ensuring you get the best value for your rental without any hidden fees.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="info-card">
+      <img src="abc3.png" alt="No Hidden Charges" class="card-image" />
+      <h3 class="card-title left-text">No Hidden Charges</h3>
+      <p class="card-text left-text">
+        We believe in transparency, so our pricing is clear from the start. No hidden charges, no unexpected costs—just honest, upfront rental rates.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="stats-row">
+    <!-- Stat 1 -->
+    <div class="stat-box">
+      <h3 class="stat-title">20k+</h3>
+      <p class="stat-subtitle">Happy Customers</p>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="stat-box">
+      <h3 class="stat-title">150+</h3>
+      <p class="stat-subtitle">Count of Cars</p>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="stat-box">
+      <h3 class="stat-title">15+</h3>
+      <p class="stat-subtitle">Happy Customers</p>
+    </div>
+  </div>
+</section>
+
+<section class="car-process-section">
+  <div class="car-process-header">
+    <h2>How it works</h2>
+    <p>
+      Renting a premium car has never been easier. Our streamlined process<br>
+      makes it simple for you to book and confirm your vehicle of choice online.
+    </p>
+  </div>
+
+  <div class="car-process-body">
+    <div class="car-steps-column">
+      <!-- Step 1 -->
+      <div class="car-step-card">
+        <img src="abf1.png" alt="Choose Car">
+        <div class="car-step-content">
+          <h3>Choose your Car</h3>
+          <p>Browse our wide selection from economy to luxury and pick the perfect ride for your needs.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="car-step-card">
+        <img src="abf2.png" alt="Book Online">
+        <div class="car-step-content">
+          <h3>Book Online</h3>
+          <p>Select dates, location, and extras. Complete your booking in just a few clicks.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="car-step-card">
+        <img src="abf3.png" alt="Enjoy Ride">
+        <div class="car-step-content">
+          <h3>Enjoy your Ride</h3>
+          <p>We'll deliver the car to your doorstep or you can pick it up at a nearby location.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="car-process-visual">
+      <img src="abo.png" alt="Process Overview">
+    </div>
+  </div>
+</section>
+
+
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="about.html">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>
