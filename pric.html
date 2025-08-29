@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+/* Section Layout */
+.pricing-section {
+  padding: 2rem;
+}
+
+/* Header */
+.pricing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.filter-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.filter-btn {
+  background-color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Grid Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 160px;
+}
+
+/* Card Styling */
+.car-card {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Rating Badge */
+.card-rating {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Car Image */
+.car-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Details Section */
+.car-details {
+  margin-top: 1rem;
+}
+
+.car-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.car-price {
+  font-size: 1rem;
+  color: #333;
+}
+
+.subtext {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: 4px;
+}
+
+/* Specs Row */
+.car-specs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.spec-item {
+  background-color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  width: 100px;
+  height: auto;
+}
+.spec-item img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+/* Rent Button */
+.rent-btn {
+  background-color: #007bff;
+  color: #000;
+  border: none;
+  padding: 0.7rem;
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rent-btn:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+<section class="pricing-section">
+  <header class="pricing-header">
+    <h1 class="breadcrumb">Home → Pricing</h1>
+    <button class="filter-btn" onclick="location.href='filter.html'">
+      <img src="fil.jpeg" alt="Filter Icon" width ="50px" />
+      <h3>Filter</h3>
+    </button>
+  </header>
+
+  <div class="card-grid">
+    <!-- Repeat this block for each car -->
+    <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="cn1.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+ <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="cn3.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+ <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="spc3.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="spc4.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="spc5.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="spc6.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="vc4.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="vc5.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="vc3.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="pc3.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="spc4.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+
+     <div class="car-card">
+      <div class="card-rating">⭐ 4.7</div>
+      <img src="pc5.png" alt="BMW M4 2025" class="car-image" />
+      <div class="car-details">
+        <h2 class="car-title">BMW M4 2025</h2>
+        <p class="car-price">₹1,200<span class="subtext">/day</span></p>
+        <div class="car-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> ₹4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+      <button class="rent-btn">Rent Now</button>
+    </div>
+ </div>
+</section>
+  
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="about.html">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>

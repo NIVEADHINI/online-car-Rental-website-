@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar with Icons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;    
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #007BFF;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-items li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 40px 20px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #007BFF;
+}
+
+.footer-column p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.store-icon {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  margin-right: 15px;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li,
+  .footer-column p {
+    font-size: 14px;
+  }
+
+  .store-icon {
+    width: 100px;
+  }
+
+  .social-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+/* === Carousel Container === */
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === Track for Sliding === */
+.banner-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+/* === Individual Banner Item === */
+.banner-item {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* === Active Banner === */
+.banner-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Banner Title === */
+.banner-item h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.banner-item.active h2 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Banner Image === */
+.banner-item img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(1.3);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.banner-item.active img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Linear Gradient Backgrounds === */
+.banner-item.grey {
+  background: linear-gradient(135deg, #d3d3d3, #a9a9a9);
+}
+
+.banner-item.blue {
+  background: linear-gradient(135deg, #1e90ff, #4682b4);
+}
+
+.banner-item.green {
+  background: linear-gradient(135deg, #90ee90, #32cd32);
+}
+
+.banner-item.gold {
+  background: linear-gradient(135deg, #ffd700, #f0e68c);
+}
+
+.banner-item.brown {
+  background: linear-gradient(135deg, #c0c0c0, #470319);
+}
+
+/* === Navigation Buttons === */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #fff;
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .banner-item h2 {
+    font-size: 2rem;
+  }
+
+  .banner-item img {
+    width: 90%;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+}
+/* Banner Slider Container */
+.banner-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slide Wrapper */
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.slide.active {
+  display: flex;
+}
+
+/* Banner Content */
+.banner-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.banner-image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Navigation Controls */
+.nav-controls {
+  margin-top: 1rem;
+}
+.nav-prev, .nav-next {
+  cursor: pointer;
+  margin: 0 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Card Row */
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Info Cards */
+.info-card {
+  width: 300px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.info-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.card-lshape {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Gradients */
+.gradient-silver-white {
+  background: linear-gradient(to right, #514f4f, #ffffff);
+}
+.gradient-silver-brown {
+  background: linear-gradient(to right, #dcdcdc, #602103);
+}
+.gradient-silver-blue {
+  background: linear-gradient(to right, #dcdcdc, #034582);
+}
+.gradient-silver-green {
+  background: linear-gradient(to right, #dcdcdc, #216103);
+}
+.gradient-silver-gold {
+  background: linear-gradient(to right, #e9ed09, #b9df0b);
+}
+/* Zoom Effect */
+.zoom {
+  transition: transform 0.3s ease;
+}
+.zoom:hover {
+  transform: scale(1.05);
+}
+.dropdown-row-with-labels {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  background-color: #f3e8ff; /* light purple */
+  border-radius: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+label {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #7c3aed;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #5b21b6;
+}
+.car-brands-section {
+  text-align: center;
+  color: black;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.car-brands-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.car-brands-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.card-row1 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.brand-card {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  padding: 10px;
+  width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.brand-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.brand-card img.small-img {
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+}
+.vehicle-section {
+  text-align: center;
+  color: black;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.vehicle-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.vehicle-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.vehicle-card {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 15px;
+  width: 100%;
+  max-width: 320px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.vehicle-card:hover {
+  transform: scale(1.05);
+}
+
+.vehicle-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.vehicle-label {
+  background: url('smoke-bg.jpg') center/cover no-repeat;
+  color: black;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.popular-rides {
+  text-align: center;
+  color: black;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.rides-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.rides-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.rides-row {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ride-card {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 300px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ride-card:hover {
+  transform: scale(1.03);
+}
+
+.light-purple {
+  background-color: #e6d6f5;
+}
+
+.grey-bg {
+  background-color: #d3d3d3;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.rent-btn {
+  background-color: #3399ff;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ride-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.ride-info h3 {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.ride-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 0.8rem;
+  vertical-align: sub;
+}
+
+.ride-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem; /* Smaller text */
+  padding: 2px 4px;
+}
+
+.spec-item img {
+  width: 24px; /* Smaller icon */
+  height: 24px;
+  object-fit: contain;
+}
+.car-section {
+  text-align: center;
+  color: black;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.car-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.car-info {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.car-title {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.car-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.car-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.car-button {
+  background-color: #3399ff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.car-gallery {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.image-main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.image-side,
+.image-interior {
+  width: 200%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.section-bmw-m2 {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: black;
+}
+
+.layout-bmw-m2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 260px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.layout-reverse {
+  flex-direction: row;
+}
+
+.gallery-bmw-m2 {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.grid-bmw-m2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.img-bmw-main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-bmw-side {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 200%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-bmw-interior {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  width: 200%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.info-bmw-m2 {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.title-bmw-m2 {
+  font-size: 1.9rem;
+  margin-bottom: 5px;
+}
+
+.subtitle-bmw-m2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.desc-bmw-m2 {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-bmw-m2 {
+  background-color: #3399ff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.section-mini-cooper {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: black;
+}
+
+.layout-mini-cooper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.info-mini-cooper {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.title-mini-cooper {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.subtitle-mini-cooper {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.desc-mini-cooper {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-mini-cooper {
+  background-color: #3399ff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gallery-mini-cooper {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.grid-mini-cooper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.img-mini-main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-mini-side {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 200%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img-mini-interior {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  width: 200%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.image-strip-nine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  padding: 20px 0;
+}
+
+.image-strip-nine img {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-strip-nine img:hover {
+  transform: scale(1.05);
+}
+.section-testimonials {
+  text-align: center;
+  color: black;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background-color: #d6ecff;
+  color: black;
+  width: 360px;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 1rem;
+}
+
+.star-filled {
+  color: gold;
+}
+
+.star-empty {
+  color: #ccc;
+}
+
+.card-image {
+  width: 120px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Animate image left on click */
+.testimonial-card.clicked .card-image {
+  transform: translateX(-120px);
+}
+.shape-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.shape-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.diamond {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, silver, rgb(67, 65, 65));
+  transform: rotate(45deg);
+  animation: zoomPulse 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(192,192,192,0.6);
+}
+
+/* Zoom in/out animation */
+@keyframes zoomPulse {
+  0%   { transform: rotate(45deg) scale(1); }
+  50%  { transform: rotate(45deg) scale(1.2); }
+  100% { transform: rotate(45deg) scale(1); }
+}
+.faq-section {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000;
+}
+
+.faq-section h1,
+.faq-section .subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.faq-item {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: #000;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #0078D4;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="car.html">Cars</a></li>
+        <li><a href="pric.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cont.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="n2.jpg" alt="Search" class="icon" />
+      <a href="cart.html"><img src="n1.jpeg" alt="Cart" class="icon" /></a>
+      <img src="n2.jpeg" alt="Account" class="icon" />
+    </div>
+  </nav>
+
+  <section class="banner-slider">
+  <div class="slider-container">
+
+    <!-- Slide 1: MAHADIRA -->
+    <div class="slide active gradient-silver-white">
+      <div class="banner-content">
+        <h2 class="banner-title zoom">MAHADIRA</h2>
+        <img src="b1.png" alt="Mahadira Car" class="banner-image zoom" />
+        <div class="nav-controls">
+          <span class="nav-prev underline" onclick="prevSlide()">Preview</span>
+          <span class="nav-next underline" onclick="nextSlide()">Next</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <!-- Reusable Cards -->
+        <div class="info-card curved gradient-silver-white">
+          <h3><img src="transmission-icon.png" alt=""> Transmission</h3>
+          <p><strong>Gear Box Manual</strong></p>
+          <div class="card-lshape">
+            <p>Manual Transmission gives you full control over gear shifts, ideal for performance driving.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-white">
+          <h3><img src="energy-icon.png" alt=""> Energy Mode</h3>
+          <p><strong>Power Petrol</strong></p>
+          <div class="card-lshape">
+            <p>Petrol engines deliver smooth, quiet performance with quick acceleration.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-white">
+          <h3><img src="seating-icon.png" alt=""> Seating Capacity</h3>
+          <p><strong>Comfort 5 Adult</strong></p>
+          <div class="card-lshape">
+            <p>Comfortably seats up to 5 passengers, perfect for families or small groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: MG -->
+    <div class="slide gradient-silver-brown">
+      <div class="banner-content">
+        <h2 class="banner-title zoom">MG</h2>
+        <img src="b1.png" alt="MG Car" class="banner-image zoom" width="100px"/>
+        <div class="nav-controls">
+          <span class="nav-prev underline" onclick="prevSlide()">Preview</span>
+          <span class="nav-next underline" onclick="nextSlide()">Next</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="info-card curved gradient-silver-brown">
+          <h3><img src="transmission-icon.png" alt=""> Transmission</h3>
+          <p><strong>Gear Box Manual</strong></p>
+          <div class="card-lshape">
+            <p>Manual Transmission gives you full control over gear shifts, ideal for performance driving.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-brown">
+          <h3><img src="energy-icon.png" alt=""> Energy Mode</h3>
+          <p><strong>Power Petrol</strong></p>
+          <div class="card-lshape">
+            <p>Petrol engines deliver smooth, quiet performance with quick acceleration.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-brown">
+          <h3><img src="seating-icon.png" alt=""> Seating Capacity</h3>
+          <p><strong>Comfort 5 Adult</strong></p>
+          <div class="card-lshape">
+            <p>Comfortably seats up to 5 passengers, perfect for families or small groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: SKODA -->
+    <div class="slide gradient-silver-green">
+      <div class="banner-content">
+        <h2 class="banner-title zoom">SKODA</h2>
+        <img src="b4.png" alt="Skoda Car" class="banner-image zoom" />
+        <div class="nav-controls">
+          <span class="nav-prev underline" onclick="prevSlide()">Preview</span>
+          <span class="nav-next underline" onclick="nextSlide()">Next</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="info-card curved gradient-silver-green">
+          <h3><img src="transmission-icon.png" alt=""> Transmission</h3>
+          <p><strong>Gear Box Manual</strong></p>
+          <div class="card-lshape">
+            <p>Manual Transmission gives you full control over gear shifts, ideal for performance driving.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-green">
+          <h3><img src="energy-icon.png" alt=""> Energy Mode</h3>
+          <p><strong>Power Petrol</strong></p>
+          <div class="card-lshape">
+            <p>Petrol engines deliver smooth, quiet performance with quick acceleration.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-green">
+          <h3><img src="seating-icon.png" alt=""> Seating Capacity</h3>
+          <p><strong>Comfort 5 Adult</strong></p>
+          <div class="card-lshape">
+            <p>Comfortably seats up to 5 passengers, perfect for families or small groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: MARUTHI -->
+    <div class="slide gradient-silver-blue">
+      <div class="banner-content">
+        <h2 class="banner-title zoom">MARUTHI</h2>
+        <img src="b5.png" alt="Maruthi Car" class="banner-image zoom" />
+        <div class="nav-controls">
+          <span class="nav-prev underline" onclick="prevSlide()">Preview</span>
+          <span class="nav-next underline" onclick="nextSlide()">Next</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <!-- Reusable Cards -->
+        <div class="info-card curved gradient-silver-blue">
+          <h3><img src="transmission-icon.png" alt=""> Transmission</h3>
+          <p><strong>Gear Box Manual</strong></p>
+          <div class="card-lshape">
+            <p>Manual Transmission gives you full control over gear shifts, ideal for performance driving.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-blue">
+          <h3><img src="energy-icon.png" alt=""> Energy Mode</h3>
+          <p><strong>Power Petrol</strong></p>
+          <div class="card-lshape">
+            <p>Petrol engines deliver smooth, quiet performance with quick acceleration.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-blue">
+          <h3><img src="seating-icon.png" alt=""> Seating Capacity</h3>
+          <p><strong>Comfort 5 Adult</strong></p>
+          <div class="card-lshape">
+            <p>Comfortably seats up to 5 passengers, perfect for families or small groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: TATA -->
+    <div class="slide gradient-silver-gold">
+      <div class="banner-content">
+        <h2 class="banner-title zoom">TATA</h2>
+        <img src="b2.png" alt="Tata Car" class="banner-image zoom" />
+        <div class="nav-controls">
+          <span class="nav-prev underline" onclick="prevSlide()">Preview</span>
+          <span class="nav-next underline" onclick="nextSlide()">Next</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="info-card curved gradient-silver-gold">
+          <h3><img src="transmission-icon.png" alt=""> Transmission</h3>
+          <p><strong>Gear Box Manual</strong></p>
+          <div class="card-lshape">
+            <p>Manual Transmission gives you full control over gear shifts, ideal for performance driving.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-gold">
+          <h3><img src="energy-icon.png" alt=""> Energy Mode</h3>
+          <p><strong>Power Petrol</strong></p>
+          <div class="card-lshape">
+            <p>Petrol engines deliver smooth, quiet performance with quick acceleration.</p>
+          </div>
+        </div>
+        <div class="info-card curved gradient-silver-gold">
+          <h3><img src="seating-icon.png" alt=""> Seating Capacity</h3>
+          <p><strong>Comfort 5 Adult</strong></p>
+          <div class="card-lshape">
+            <p>Comfortably seats up to 5 passengers, perfect for families or small groups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<section class="dropdown-row-with-labels">
+  <div class="dropdown-group">
+    <label for="departure">Departure</label>
+    <select id="departure">
+      <option>Coimbatore</option>
+      <option>Tirupur</option>
+    </select>
+  </div>
+
+  <div class="dropdown-group">
+    <label for="return-location">Return Location</label>
+    <select id="return-location">
+      <option>Coimbatore</option>
+      <option>Tirupur</option>
+    </select>
+  </div>
+
+  <div class="dropdown-group">
+    <label for="pickup-datetime">Pick Up Date Time</label>
+    <select id="pickup-datetime">
+      <option>📅 01, May, 2025 | 12:00 PM</option>
+    </select>
+  </div>
+
+  <div class="dropdown-group">
+    <label for="return-datetime">Return Date Time</label>
+    <select id="return-datetime">
+      <option>📅 05, May, 2025 | 11:00 AM</option>
+    </select>
+  </div>
+  <div class="center-button">
+  <a href="pric.html" class="nav-button">Search Cars</a>
+</div>
+</section>
+
+  <section class="car-brands-section">
+  <h2>Explore Trusted Car Brands</h2>
+  <p>Rides you know, Brands you trust.</p>
+
+  <div class="card-row1">
+    <div class="brand-card" onclick="location.href='sal.html'">
+      <img src="hec1.png" alt="Brand 1 Image 1">
+      <img src="he1.png" alt="Brand 1 Image 2" class="small-img">
+    </div>
+    <div class="brand-card" onclick="location.href='sal.html'">
+      <img src="hec2.png" alt="Brand 2 Image 1">
+      <img src="he2.png" alt="Brand 2 Image 2" class="small-img">
+    </div>
+    <div class="brand-card" onclick="location.href='sal.html'">
+      <img src="hec3.png" alt="Brand 3 Image 1">
+      <img src="he3.png" alt="Brand 3 Image 2" class="small-img">
+    </div>
+    <div class="brand-card" onclick="location.href='sal.html'">
+      <img src="hec4.png" alt="Brand 4 Image 1">
+      <img src="he4.png" alt="Brand 4 Image 2" class="small-img">
+    </div>
+    <div class="brand-card" onclick="location.href='sal.html'">
+      <img src="hec5.png" alt="Brand 5 Image 1">
+      <img src="he5.png" alt="Brand 5 Image 2" class="small-img">
+    </div>
+  </div>
+</section>
+
+<section class="vehicle-section">
+  <h2 class="vehicle-title">Drive the Way you Want</h2>
+  <p class="vehicle-subtitle">Your ride, Your Style.</p>
+
+  <div class="vehicle-grid">
+    <!-- First Row -->
+    <div class="vehicle-card" onclick="location.href='sal.html'">
+      <img src="hd1.png" alt="Saloon" class="vehicle-image">
+      <div class="vehicle-label">Saloon</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='pick.html'">
+      <img src="hd2.png" alt="SUV" class="vehicle-image">
+      <div class="vehicle-label">SUV</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='van.html'">
+      <img src="hd3.png" alt="Van" class="vehicle-image">
+      <div class="vehicle-label">Van</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='pick.html'">
+      <img src="hd4.png" alt="Pickup" class="vehicle-image">
+      <div class="vehicle-label">Pickup</div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="vehicle-card" onclick="location.href='spo.html'">
+      <img src="hd5.png" alt="Sports" class="vehicle-image">
+      <div class="vehicle-label">Sports</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='off.html'">
+      <img src="hd6.png" alt="Off Road" class="vehicle-image">
+      <div class="vehicle-label">Off Road</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='off.html'">
+      <img src="hd7.png" alt="Hatchback" class="vehicle-image">
+      <div class="vehicle-label">Hatchback</div>
+    </div>
+
+    <div class="vehicle-card" onclick="location.href='spo.html'">
+      <img src="hd8.png" alt="Roaster" class="vehicle-image">
+      <div class="vehicle-label">Roaster</div>
+    </div>
+  </div>
+</section>
+
+<section class="popular-rides">
+  <h1 class="rides-title">Most Popular Rides</h1>
+  <p class="rides-subtitle">Top cars, Top experiences.</p>
+
+  <div class="rides-row">
+    <!-- Card 1 -->
+    <div class="ride-card light-purple" onclick="location.href='sal.html'">
+      <div class="card-header">
+        <span class="rating">⭐ 4.7</span>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+      <img src="fill2.png" alt="Toyota Fortuner 2023" class="ride-image">
+      <div class="ride-info">
+        <h3>Toyota Fortuner 2023</h3>
+        <p>1,800<span class="subtext">/day</span></p>
+        <div class="ride-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> 4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="ride-card light-purple" onclick="location.href='sal.html'">
+      <div class="card-header">
+        <span class="rating">⭐ 4.7</span>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+      <img src="ca2.png" alt="Nissan Maxima Platinum 2024" class="ride-image">
+      <div class="ride-info">
+        <h3>Nissan Maxima Platinum 2024</h3>
+        <p>2,800<span class="subtext">/day</span></p>
+        <div class="ride-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> 4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="ride-card light-purple" onclick="location.href='spo.html'">
+      <div class="card-header">
+        <span class="rating">⭐ 4.7</span>
+        <button class="rent-btn">Rent Now</button>
+      </div>
+      <img src="ca1.png" alt="Skoda Kodiaq Platinum 2025" class="ride-image">
+      <div class="ride-info">
+        <h3>Skoda Kodiaq Platinum 2025</h3>
+        <p>1,800<span class="subtext">/day</span></p>
+        <div class="ride-specs">
+          <div class="spec-item"><img src="spp.jpg" alt=""> 4,000</div>
+          <div class="spec-item"><img src="man.png" alt=""> Manual</div>
+          <div class="spec-item"><img src="per.jpg" alt=""> 7 Person</div>
+          <div class="spec-item"><img src="ele.jpeg" alt=""> Electric</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="car-section">
+  <h1 class="section-heading">Popular Cars, Ready to Drive</h1>
+  <p class="section-subtext">These cars are in demand — don't wait, book today!</p>
+
+  <div class="car-layout">
+    <!-- Left Text Block -->
+    <div class="car-info">
+      <h2 class="car-title">AUDI Q7</h2>
+      <h4 class="car-subtitle">Command Attention, Drive Prestige.</h4>
+      <p class="car-description">
+        The Audi Q7 is where power meets elegance. With bold design, advanced technology, and the confidence of quattro all-wheel drive, it offers a driving experience that's both luxurious and thrilling. Spacious, sophisticated, and unmistakably Audi — this is the SUV that redefines what it means to arrive.
+      </p>
+      <button class="car-button" onclick="location.href='pric.html'">Explore</button>
+    </div>
+
+    <!-- Right Image Grid -->
+    <div class="car-gallery">
+      <div class="image-grid">
+        <img src="hau1.png" alt="Audi Q7 Main" class="image-main">
+        <img src="hau3.png" alt="Audi Side View" class="image-side">
+        <img src="hau2.png" alt="Audi Interior" class="image-interior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-bmw-m2">
+  <div class="layout-bmw-m2">
+    <!-- Left Image Grid -->
+    <div class="gallery-bmw-m2">
+      <div class="grid-bmw-m2">
+        <img src="hbmw1.png" alt="BMW M2 Main" class="img-bmw-main">
+        <img src="hbmw2.png" alt="BMW Side View" class="img-bmw-side">
+        <img src="hbmw3.png" alt="BMW Interior" class="img-bmw-interior">
+      </div>
+    </div>
+
+    <!-- Right Text Block -->
+    <div class="info-bmw-m2">
+      <h2 class="title-bmw-m2">BMW M2</h2>
+      <h4 class="subtitle-bmw-m2">Pure Power, Perfect Control.</h4>
+      <p class="desc-bmw-m2">
+        The new BMW M2 is a compact powerhouse built for purists. With a turbocharged inline-6 engine, rear-wheel drive, and aggressive M styling, it delivers raw performance and precise handling in every turn. From the track to the street, the M2 is engineered for those who crave the ultimate driving thrill — without compromise.
+      </p>
+      <button class="btn-bmw-m2" onclick="location.href='van.html'">Explore More</button>
+    </div>
+  </div>
+</section>
+
+<section class="section-mini-cooper">
+  <div class="layout-mini-cooper">
+    <!-- Left Text Block -->
+    <div class="info-mini-cooper">
+      <h2 class="title-mini-cooper">MINI Cooper</h2>
+      <h4 class="subtitle-mini-cooper">Iconic Style, Electrifying Spirit.</h4>
+      <p class="desc-mini-cooper">
+        The 2025 MINI Cooper blends classic charm with cutting-edge innovation. With its unmistakable design, agile handling, and advanced digital cockpit, it's more than a car — it's an attitude. Whether you're zipping through city streets or hitting the open road, the new MINI delivers big fun in a compact package.
+      </p>
+      <button class="btn-mini-cooper" onclick="location.href='off.html'">Explore</button>
+    </div>
+
+    <!-- Right Image Grid -->
+    <div class="gallery-mini-cooper">
+      <div class="grid-mini-cooper">
+        <img src="hmin1.png" alt="MINI Cooper Main" class="img-mini-main">
+        <img src="hmin2.png" alt="MINI Side View" class="img-mini-side">
+        <img src="abo.png" alt="MINI Interior" class="img-mini-interior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="image-strip-nine">
+  <img src="hlo1.png" alt="Image 1">
+  <img src="hlo2.png" alt="Image 2">
+  <img src="hlo3.png" alt="Image 3">
+  <img src="hlo4.png" alt="Image 4">
+  <img src="hlo5.png" alt="Image 5">
+  <img src="hlo6.png" alt="Image 6">
+  <img src="hlo7.png" alt="Image 7">
+  <img src="hlo8.png" alt="Image 8">
+  <img src="hlo9.png" alt="Image 9">
+</div>
+
+<section class="section-testimonials">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <p class="section-subtitle">Trusted by Drivers Everywhere</p>
+
+  <div class="testimonial-grid">
+    <!-- Card 1 -->
+    <div class="testimonial-card" onclick="animateImage(this)">
+      <div class="card-body">
+        <p class="testimonial-text">
+          I rented a BMW for a weekend road trip, and the whole process was seamless.
+          The car was in perfect condition, and I'll definitely rent again.
+        </p>
+        <div class="card-footer">
+          <span class="reviewer-name">Ravena</span>
+          <div class="rating-stars">
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-empty">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-image image-trapezium" style="background-image: url('cus1.png');"></div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="testimonial-card" onclick="animateImage(this)">
+      <div class="card-body">
+        <p class="testimonial-text">
+          The MINI Cooper I rented was the perfect city car—fun to drive and easy to park.
+          Great experience from start to finish!
+        </p>
+        <div class="card-footer">
+          <span class="reviewer-name">Agalya</span>
+          <div class="rating-stars">
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-empty">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-image image-trapezium" style="background-image: url('cus2.png');"></div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="testimonial-card" onclick="animateImage(this)">
+      <div class="card-body">
+        <p class="testimonial-text">
+          Adorable wholesale toy shop with high quality independently made bike and toys.
+          Very friendly staff as well. A must stop with little ones when in Bath.
+        </p>
+        <div class="card-footer">
+          <span class="reviewer-name">Muthu Ravi</span>
+          <div class="rating-stars">
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-filled">★</span><span class="star star-filled">★</span>
+            <span class="star star-empty">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-image image-trapezium" style="background-image: url('cus3.png');"></div>
+    </div>
+  </div>
+</section>
+<section class="shape-section">
+  <div class="shape-wrapper">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="diamond"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <h1>Frequently Asked Questions</h1>
+  <p class="subtitle">Everything you need to know before you hit the road</p>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleAnswer(this)">What do I need to rent a car?</button>
+    <div class="faq-answer">
+      <p>You need a valid driver's license, a government-issued ID, and a credit/debit card for payment. The minimum age is usually 21, depending on the car type. International renters may need extra documentation.</p>
+    </div>
+    <hr>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleAnswer(this)">Can I rent a specific car model?</button>
+    <div class="faq-answer">
+      <p>Yes, you can choose a specific brand or model when booking, based on availability. We offer a wide range of options, including BMW, Audi, and MINI. Booking early is recommended.</p>
+    </div>
+    <hr>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleAnswer(this)">Is insurance included in the rental price?</button>
+    <div class="faq-answer">
+      <p>Basic insurance is included in the rental. Additional coverage options are available for extra protection. Always check the details of your insurance coverage before confirming your booking.</p>
+    </div>
+    <hr>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleAnswer(this)">Can I return the car at a different location?</button>
+    <div class="faq-answer">
+      <p>Yes, we offer one-way rentals between select locations. Additional fees may apply, and availability depends on the locations chosen. Check availability when booking your rental.</p>
+    </div>
+    <hr>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleAnswer(this)">What happens if I need to cancel my reservation?</button>
+    <div class="faq-answer">
+      <p>You can cancel for free up to 24 hours before pickup. Cancellations within 24 hours may incur a fee. You can cancel directly through your account or by contacting customer support.</p>
+    </div>
+    <hr>
+  </div>
+</section>
+
+<script>
+  function toggleAnswer(button) {
+    const answer = button.nextElementSibling;
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+<script>
+  function animateImage(card) {
+    card.classList.toggle('clicked');
+  }
+</script>
+
+<script>
+  let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    slide.style.display = i === index ? 'flex' : 'none';
+  });
+  slides[index].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentSlide);
+});
+</script>
+</body>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3><ul>Know</ul></h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About FlexiCar</a></li>
+        <li><a href="#">Bulk Order & Booking Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Terms & Conditions</ul></h3>
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Delivery & Return Policies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Contact Us</ul></h3>
+      <p>For Sale: <a href="cont.html">flexicar@co.in</a></p>
+      <p>Call: <a href="cont.html">+91 1234567890</a></p>
+      <p>For Complaints: <a href="cont.html">1800 2421 2421</a></p>
+      <p>Chat Time: Our team is available<br>Monday to Saturday<br>9:00 AM to 8:00 PM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>Download App</ul></h3>
+      <a href="#"><img src="F1.jpeg" alt="Apple Store" class="store-icon"></a><br>
+      <a href="#"><img src="f2.jpeg" alt="Google Play" class="store-icon"></a>
+    </div>
+
+    <div class="footer-column">
+      <h3><ul>FOLLOW US</ul></h3>
+      <a href="#"><img src="ins.jpeg" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="face.jpeg" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="tw.jpg" alt="Twitter" class="social-icon"></a>
+    </div>
+  </div>
+</footer>
+</html>
